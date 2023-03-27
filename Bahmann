@@ -1,1 +1,1 @@
-trojan://bTr4dlmCgq@hamrah1.pouyaa.xyz:2053?security=tls&sni=xpac.pouyaa.xyz&alpn=h2%2Chttp%2F1.1&fp=chrome&type=ws&host=xpac.pouyaa.xyz&path=%2F#Hamrah%201
+vless://4ed6c4f1-8a84-43f9-fe97-f923843e6dc2@hamrah1.pouyaa.xyz:2096?encryption=none&security=tls&sni=xpac.pouyaa.xyz&alpn=h2%2Chttp%2F1.1&fp=chrome&type=grpc#Hamrah%202%20Bahman
