@@ -23,6 +23,7 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)novinpardakht\.com$/.test(host)) return "DIRECT";
         if (/(?:^|\.)ir$/.test(host)) return "DIRECT";
         if (/(?:^|\.)com$/.test(host)) return "+V2ray";
+        if (/(?:^|\.)/.test(host)) return "+V2ray";
         return "+__ruleListOf_Website";
     },
     "+__ruleListOf_Website": function(url, host, scheme) {
