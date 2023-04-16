@@ -1,0 +1,38 @@
+var FindProxyForURL = function(init, profiles) {
+    return function(url, host) {
+        "use strict";
+        var result = init, scheme = url.substr(0, url.indexOf(":"));
+        do {
+            result = profiles[result];
+            if (typeof result === "function") result = result(url, host, scheme);
+        } while (typeof result !== "string" || result.charCodeAt(0) === 43);
+        return result;
+    };
+}("+Website", {
+    "+Website": function(url, host, scheme) {
+        "use strict";
+        if (/(?:^|\.)tse\.ir$/.test(host)) return "DIRECT";
+        if (/(?:^|\.)emofid\.ir$/.test(host)) return "DIRECT";
+        if (/(?:^|\.)downloadha\.com$/.test(host)) return "DIRECT";
+        if (/(?:^|\.)play\.google\.com$/.test(host)) return "+V2ray";
+        if (/(?:^|\.)t\.me$/.test(host)) return "+V2ray";
+        if (/(?:^|\.)telegeram\.org$/.test(host)) return "+V2ray";
+        if (/(?:^|\.)digikala\.com$/.test(host)) return "DIRECT";
+        if (/(?:^|\.)pouyaa\.xyz$/.test(host)) return "+V2ray";
+        if (/(?:^|\.)parspack\.com$/.test(host)) return "DIRECT";
+        if (/(?:^|\.)novinpardakht\.com$/.test(host)) return "DIRECT";
+        if (/(?:^|\.)ir$/.test(host)) return "DIRECT";
+        if (/(?:^|\.)com$/.test(host)) return "+V2ray";
+        return "+__ruleListOf_Website";
+    },
+    "+__ruleListOf_Website": function(url, host, scheme) {
+        "use strict";
+        if (/(?:^|\.)digikala\.com$/.test(host)) return "DIRECT";
+        return "DIRECT";
+    },
+    "+V2ray": function(url, host, scheme) {
+        "use strict";
+        if (/^127\.0\.0\.1$/.test(host) || /^::1$/.test(host) || /^localhost$/.test(host)) return "DIRECT";
+        return "SOCKS5 127.0.0.1:10808; SOCKS 127.0.0.1:10808";
+    }
+});
