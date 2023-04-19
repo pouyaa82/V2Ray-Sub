@@ -22,8 +22,8 @@ var FindProxyForURL = function(init, profiles) {
         if (/(?:^|\.)parspack\.com$/.test(host)) return "DIRECT";
         if (/(?:^|\.)novinpardakht\.com$/.test(host)) return "DIRECT";
         if (/(?:^|\.)ir$/.test(host)) return "DIRECT";
+        if (/mozilla\.org$/.test(host)) return "DIRECT";
         if (/(?:^|\.)google\.com$/.test(host)) return "DIRECT";
-        if (/\/images$/.test(host)) return "+V2ray";
         if (/(?:^|\.)com$/.test(host)) return "+V2ray";
         if (/(?:^|\.)/.test(host)) return "+V2ray";
         return "+__ruleListOf_Website";
