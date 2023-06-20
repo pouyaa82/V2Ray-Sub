@@ -192,14 +192,14 @@ dns:
 proxies: 
 - name: ShadowTLS v3
   type: ss
-  server: 128.140.94.172 #VPS IP地址
+  server: 128.140.94.172 #VPS IP
   port: 2087 #监听端口
   cipher: 2022-blake3-chacha20-poly1305 #shadowsocks节点的加密方式
   password: "NZew3ZrmZjxullszmAKtfu+pZh0F1dxnIPcwlaStjyI=" #shadowsocks节点的密码
   plugin: shadow-tls
   client-fingerprint: chrome
   plugin-opts:
-    host: "www.apple.com" #握手服务器地址
+    host: "www.datadoghq.com" #握手服务器地址
     password: "XTVsAyFnREiRn5hgrjUAu8a9dSsicFKYIJM+K8+Iv8g="   #ShadowTLS密码
     version: 3 # support 1/2/3
 proxy-groups: 
@@ -304,4 +304,3 @@ rules:
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,PROXY
-
